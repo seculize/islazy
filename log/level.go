@@ -25,12 +25,12 @@ const (
 var (
 	// LevelNames is a map of the names ( {level:name} ) of each verbosity level.
 	LevelNames = map[Verbosity]string{
-		DEBUG:     "dbg",
-		INFO:      "inf",
-		IMPORTANT: "imp",
-		WARNING:   "war",
-		ERROR:     "err",
-		FATAL:     "!!!",
+		DEBUG:     "[Debug]",
+		INFO:      "[Info]",
+		IMPORTANT: "[Important]",
+		WARNING:   "[Warning]",
+		ERROR:     "[Error]",
+		FATAL:     "[FATAL]",
 	}
 	// LevelColors is a map of the colors ( {level:color} ) of each verbosity level.
 	LevelColors = map[Verbosity]string{
