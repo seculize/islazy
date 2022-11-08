@@ -1,7 +1,7 @@
 package main
 
 import (
-	"github.com/evilsocket/islazy/log"
+	"github.com/seculize/islazy/log"
 )
 
 func main() {

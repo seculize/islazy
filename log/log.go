@@ -7,7 +7,7 @@ import (
 	"strings"
 	"sync"
 
-	"github.com/evilsocket/islazy/tui"
+	"github.com/seculize/islazy/tui"
 )
 
 var (

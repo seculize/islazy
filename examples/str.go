@@ -3,7 +3,7 @@ package main
 import (
 	"fmt"
 
-	"github.com/evilsocket/islazy/str"
+	"github.com/seculize/islazy/str"
 )
 
 func main() {

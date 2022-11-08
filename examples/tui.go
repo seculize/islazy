@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/evilsocket/islazy/tui"
+	"github.com/seculize/islazy/tui"
 )
 
 func main() {

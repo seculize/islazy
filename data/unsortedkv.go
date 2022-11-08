@@ -8,7 +8,7 @@ import (
 	"os"
 	"sync"
 
-	"github.com/evilsocket/islazy/fs"
+	"github.com/seculize/islazy/fs"
 )
 
 // UnsortedKV is a thread safe and unsorted key-value
