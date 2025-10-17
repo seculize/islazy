@@ -109,7 +109,7 @@ func (p *Plugin) Call(name string, args ...interface{}) (interface{}, error) {
 // Methods returns a list of methods exported from the javascript
 func (p *Plugin) Methods() []string {
 	methods := []string{}
-	for key, _ := range p.callbacks {
+	for key := range p.callbacks {
 		methods = append(methods, key)
 	}
 	return methods
@@ -118,7 +118,7 @@ func (p *Plugin) Methods() []string {
 // Objects returns a list of object exported by the javascript
 func (p *Plugin) Objects() []string {
 	objs := []string{}
-	for key, _ := range p.callbacks {
+	for key := range p.callbacks {
 		objs = append(objs, key)
 	}
 	return objs
