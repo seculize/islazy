@@ -4,7 +4,6 @@ import (
 	"bytes"
 	"encoding/gob"
 	"encoding/json"
-	"io/ioutil"
 	"os"
 	"sync"
 
@@ -30,7 +29,7 @@ func NewUnsortedKV(fileName string, flushPolicy FlushPolicy) (*UnsortedKV, error
 	}
 
 	if fileName != "" && fs.Exists(fileName) {
-		raw, err := ioutil.ReadFile(fileName)
+		raw, err := os.ReadFile(fileName)
 		if err != nil {
 			return nil, err
 		}
@@ -102,7 +101,7 @@ func (u *UnsortedKV) flushUnlocked() error {
 	if err := encoder.Encode(u.m); err != nil {
 		return err
 	}
-	return ioutil.WriteFile(u.fileName, buf.Bytes(), os.ModePerm)
+	return os.WriteFile(u.fileName, buf.Bytes(), os.ModePerm)
 }
 
 // Flush flushes the store to disk if the flush policy

@@ -2,7 +2,7 @@ package plugin
 
 import (
 	"fmt"
-	"io/ioutil"
+	"os"
 	"path/filepath"
 	"strings"
 	"sync"
@@ -48,7 +48,7 @@ func Parse(code string) (*Plugin, error) {
 
 // Load loads and compiles a plugin given its path.
 func Load(path string) (plug *Plugin, err error) {
-	if raw, err := ioutil.ReadFile(path); err != nil {
+	if raw, err := os.ReadFile(path); err != nil {
 		return nil, err
 	} else if plug, err = Parse(string(raw)); err != nil {
 		return nil, err
@@ -109,7 +109,7 @@ func (p *Plugin) Call(name string, args ...interface{}) (interface{}, error) {
 // Methods returns a list of methods exported from the javascript
 func (p *Plugin) Methods() []string {
 	methods := []string{}
-	for key, _ := range p.callbacks {
+	for key := range p.callbacks {
 		methods = append(methods, key)
 	}
 	return methods
@@ -118,7 +118,7 @@ func (p *Plugin) Methods() []string {
 // Objects returns a list of object exported by the javascript
 func (p *Plugin) Objects() []string {
 	objs := []string{}
-	for key, _ := range p.callbacks {
+	for key := range p.callbacks {
 		objs = append(objs, key)
 	}
 	return objs
